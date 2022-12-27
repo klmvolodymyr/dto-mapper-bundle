@@ -2,7 +2,7 @@ Dto mapper bundle. (* in development*)
 
 Install
 ```bash
-$ composer require volodymyr-klymniuk/dto-mapper
+$ composer require volodymyr-klymniuk/dto-mapper-bundle
 ```
 
 Just mark your destination class by meta annotations and push your array to MapperClass.
