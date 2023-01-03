@@ -1,5 +1,5 @@
-/vendor/
-.idea
-/bin/*
-/vendor/
+.DS_Store
+.idea/
+vendor/
 composer.lock
+var/

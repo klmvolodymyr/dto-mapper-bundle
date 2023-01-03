@@ -1,0 +1,70 @@
+parameters:
+    dto.mapper.cache_dir: '%kernel.cache_dir%/dto-mapper'
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: true
+
+#    VKMapperBundle\Annotation\MappingMeta\:
+#      autowire: false
+#      resource: '../../Annotation/MappingMeta/*'
+#
+#    VKMapperBundle\Annotation\AnnotationReader:
+#      $reader: '@Doctrine\Common\Annotations\Reader'
+#
+#    VKMapperBundle\Annotation\AnnotationReaderInterface:
+#      alias: VKMapperBundle\Annotation\AnnotationReader
+#
+#    DataMapper\MappingRegistry\ClassMappingRegistry:
+#    DataMapper\MappingRegistry\ClassMappingRegistryInterface:
+#      alias: DataMapper\MappingRegistry\ClassMappingRegistry
+#
+#    DataMapper\MappingRegistry\NamingStrategyRegistry:
+#    DataMapper\MappingRegistry\NamingStrategyRegistryInterface:
+#      alias: DataMapper\MappingRegistry\NamingStrategyRegistry
+#
+#    DataMapper\MappingRegistry\DestinationRegistry:
+#    DataMapper\MappingRegistry\DestinationRegistryInterface:
+#      alias: DataMapper\MappingRegistry\DestinationRegistry
+#
+#    DataMapper\MappingRegistry\StrategyRegistry:
+#    DataMapper\MappingRegistry\StrategyRegistryInterface:
+#      alias: DataMapper\MappingRegistry\StrategyRegistry
+#
+#    DataMapper\Hydrator\HydratorFactory:
+#    DataMapper\Hydrator\HydratorFactoryInterface:
+#      alias: DataMapper\Hydrator\HydratorFactory
+#
+#    DataMapper\Mapper:
+#    DataMapper\MapperInterface:
+#      alias: DataMapper\Mapper
+#
+#    DataMapper\NamingStrategy\SnakeCaseNamingStrategy:
+#    DataMapper\NamingStrategy\UnderscoreNamingStrategy:
+#    DataMapper\NamingStrategy\IdentityNamingStrategy:
+#
+#    DataMapper\MappingRegistry\MappingRegistry:
+#    DataMapper\MappingRegistry\MappingRegistryInterface:
+#      alias: DataMapper\MappingRegistry\MappingRegistry
+#
+#    DataMapper\MappingRegistry\HydratorRegistry:
+#    DataMapper\MappingRegistry\HydratorRegistryInterface:
+#      alias: DataMapper\MappingRegistry\HydratorRegistry
+#
+#    DataMapper\Hydrator\HydratedClassesFactory:
+#      arguments:
+#        $targetDir: '%dto.mapper.cache_dir%'
+#
+#    VKMapperBundle\Hydrator\GeneratedHydratorCache:
+#      arguments:
+#        $filesystem: '@Symfony\Component\Filesystem\Filesystem'
+#        $hydratedClassesFactory: '@DataMapper\Hydrator\HydratedClassesFactory'
+#        $cacheDir: '%dto.mapper.cache_dir%'
+#
+#
+#    DataMapper\Hydrator\ArrayCollectionHydrator:
+#    DataMapper\Hydrator\ArraySerializableHydrator:
+#    DataMapper\Hydrator\ObjectHydrator:
+#      shared: false
