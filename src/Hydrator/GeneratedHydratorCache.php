@@ -22,8 +22,11 @@ class GeneratedHydratorCache
      */
     private $hydratedClassesFactory;
 
-    public function __construct(Filesystem $filesystem, HydratedClassesFactory $hydratedClassesFactory, string $cacheDir)
-    {
+    public function __construct(
+        Filesystem $filesystem,
+        HydratedClassesFactory $hydratedClassesFactory,
+        string $cacheDir
+    ) {
         $this->cacheDir = $cacheDir;
         $this->filesystem = $filesystem;
         $this->hydratedClassesFactory = $hydratedClassesFactory;

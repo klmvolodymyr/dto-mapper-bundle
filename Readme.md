@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/volodymyr-klymniuk/dto-mapper-bundle.svg?branch=develop)](https://travis-ci.org/vklymniuk/dto-mapper-bundle)
 
-## Why use VKMapperBundle?
+## Why use DtoMapperBundle?
 Bundle makes the process of binding all your data mapping rules a lot more easy by providing annotation declarations.
 You can extract content from objects and fill objects from raw arrays.
 Instead of slow and dummy reflection classes, the bundle uses fast and performance optimized  [code generator](https://github.com/Ocramius/GeneratedHydrator).
@@ -28,7 +28,7 @@ Register bundle in bundles.php file.
 <?php
 
 return [
-    VKMapperBundle\VKMapperBundle::class => ['all' => true],
+    DtoMapperBundle\DtoMapperBundle::class => ['all' => true],
 ];
 ```
 
@@ -53,9 +53,9 @@ Class example:
 
 namespace Tests\DataFixtures\Dto;
 
-use VKMapperBundle\Annotation\MappingMeta\SourceClass;
-use VKMapperBundle\Annotation\MappingMeta\DestinationClass;
-use VKMapperBundle\Annotation\MappingMeta\Strategy;
+use DtoMapperBundle\Annotation\MappingMeta\SourceClass;
+use DtoMapperBundle\Annotation\MappingMeta\DestinationClass;
+use DtoMapperBundle\Annotation\MappingMeta\Strategy;
 
 /**
  * @SourceClass

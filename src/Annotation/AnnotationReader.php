@@ -6,6 +6,9 @@ use Doctrine\Common\Annotations\Reader;
 
 class AnnotationReader implements AnnotationReaderInterface
 {
+    /**
+     * @var Reader
+     */
     private $reader;
 
     /**
