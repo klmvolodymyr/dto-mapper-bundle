@@ -17,6 +17,10 @@
         {
             "name": "Volodymyr Klymniuk",
             "email": "Volodymyr.Klymniuk@gmail.com"
+        },
+        {
+            "name": "Vladimir Klymniuk",
+            "email": "Vladimir.Klymniuk@gmail.com"
         }
     ],
     "minimum-stability": "dev",
