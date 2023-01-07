@@ -3,8 +3,6 @@
 namespace DtoMapperBundle\Annotation\MappingMeta\Strategy;
 
 use DataMapper\Strategy\XPathGetterStrategy;
-use DtoMapperBundle\Annotation\MappingMeta\Strategy\AbstractStrategy;
-use DtoMapperBundle\Annotation\MappingMeta\Strategy\ChainStrategyInterface;
 
 /**
  * @Annotation

@@ -15,16 +15,10 @@ use DataMapper\MapperInterface;
 use DataMapper\NamingStrategy\SnakeCaseNamingStrategy;
 use DataMapper\NamingStrategy\UnderscoreNamingStrategy;
 use DataMapper\Type\TypeDict;
-use DtoMapperBundle\Annotation\Exception\InvalidTypeException;
-use DtoMapperBundle\Annotation\MappingMeta\EmbeddedInterface;
 use DtoMapperBundle\Annotation\MappingMeta\NamingStrategy;
-use DtoMapperBundle\Annotation\MappingMeta\NamingStrategy\Map;
 use DtoMapperBundle\Annotation\MappingMeta\NamingStrategy\NamingStrategyInterface;
 use DtoMapperBundle\Hydrator\GeneratedHydratorCache;
-use DtoMapperBundle\StrategyAdapter\StaticClosureStrategyAdapter;
-use DtoMapperBundle\StrategyAdapter\ServiceClosureStrategyAdapter;
 use DtoMapperBundle\Annotation\MappingMetaReader;
-use DtoMapperBundle\Annotation\AnnotationReaderInterface;
 use DtoMapperBundle\Annotation\MappingMeta\Strategy as MetaStrategy;
 use DtoMapperBundle\Annotation\MappingMeta\Strategy\StrategyInterface as MetaStrategyInterface;
 

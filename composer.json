@@ -54,6 +54,6 @@
         "php"
     ],
     "scripts": {
-        "test": "phpunit -c tests/phpunit.xml tests/"
+        "test": "phpunit -c phpunit.xml tests/"
     }
 }

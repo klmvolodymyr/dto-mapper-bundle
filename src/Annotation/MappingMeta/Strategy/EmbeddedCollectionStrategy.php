@@ -2,10 +2,8 @@
 
 namespace DtoMapperBundle\Annotation\MappingMeta\Strategy;
 
+use DataMapper\Strategy\CollectionStrategy;
 use Doctrine\Common\Annotations\Annotation;
-//use DtoMapperBundle\Strategy\CollectionStrategy;
-use DtoMapperBundle\Annotation\MappingMeta\Strategy\AbstractStrategy;
-use DtoMapperBundle\Annotation\MappingMeta\Strategy\ChainStrategyInterface;
 
 /**
  * @Annotation

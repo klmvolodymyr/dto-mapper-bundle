@@ -4,8 +4,6 @@ namespace DtoMapperBundle\Annotation\MappingMeta\Strategy;
 
 use DataMapper\Strategy\FormatterStrategy;
 use Doctrine\Common\Annotations\Annotation;
-use DataMapper\Annotation\MappingMeta\Strategy\AbstractStrategy;
-use DataMapper\Annotation\MappingMeta\Strategy\ChainStrategyInterface;
 
 /**
  * @Annotation

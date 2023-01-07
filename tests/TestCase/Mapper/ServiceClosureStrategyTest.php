@@ -16,10 +16,7 @@ class ServiceClosureStrategyTest extends AbstractMapperTest
         $dto = $mapper->convert($source, ServiceClosureDto::class);
         $providerInnerScopeObject = new InnerScopeDependencySource();
 
-        $this->assertContains(
-            (string) ($source->getSum() + $providerInnerScopeObject->getValue()),
-            $dto->myValue
-        );
+        $this->assertContains((string) ($source->getSum() + $providerInnerScopeObject->getValue()), $dto->myValue);
         $this->assertContains(ClosureProvider::getText(), $dto->myValue);
     }
 }

@@ -8,7 +8,6 @@ class ArrayToObjectNamingConversionTest extends AbstractMapperTest
 {
     /**
      * @param array $source
-     *
      * @dataProvider sourcesProvider
      */
     public function testKeysConversion(array $source): void

@@ -13,13 +13,7 @@ class XPathStrategyTest extends AbstractMapperTest
         $mapper = $this->getMapper();
         /** @var XPathDestinationDto $dto */
         $dto = $mapper->convert($source, XPathDestinationDto::class);
-        $this->assertEquals(
-            $dto->nodeA,
-            $source->nodeA->inner->optionA
-        );
-        $this->assertEquals(
-            $dto->nodeB,
-            $source->nodeA->inner->optionB
-        );
+        $this->assertEquals($dto->nodeA, $source->nodeA->inner->optionA);
+        $this->assertEquals($dto->nodeB, $source->nodeA->inner->optionB);
     }
 }
