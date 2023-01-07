@@ -12,6 +12,7 @@ class RelationsMappingTest extends AbstractMapperTest
      * Test compiling
      *
      * @param array $parameters
+     *
      * @dataProvider relationsDataProvider
      */
     public function testArrayMapping(array $parameters): void

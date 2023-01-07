@@ -4,7 +4,6 @@ namespace DtoMapperBundle;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
-
 use DtoMapperBundle\DependencyInjection\Compiler\MappingCompilePass;
 use DtoMapperBundle\DependencyInjection\MapperBundleExtension;
 

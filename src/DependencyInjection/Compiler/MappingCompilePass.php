@@ -89,10 +89,7 @@ class MappingCompilePass implements CompilerPassInterface
                 continue;
             }
 
-            $classMappingRegistry->addMethodCall(
-                'registerMappingClass',
-                [$id]
-            );
+            $classMappingRegistry->addMethodCall('registerMappingClass', [$id]);
 
             $this
                 ->registerNaming($container, $metaReader, $id)
@@ -119,8 +116,7 @@ class MappingCompilePass implements CompilerPassInterface
 
             if ($strategy->getSource()) {
                 $strategyKey = TypeResolver::getStrategyType($strategy->getSource(), $id);
-                $strategyRegistry->addMethodCall(
-                    'registerPropertyStrategy',
+                $strategyRegistry->addMethodCall('registerPropertyStrategy',
                     [
                         $strategyKey,
                         $propertyName,
@@ -129,8 +125,7 @@ class MappingCompilePass implements CompilerPassInterface
                 );
             } else {
                 $strategyKey = TypeResolver::getStrategyType($id, TypeDict::ALL_TYPE);
-                $strategyRegistry->addMethodCall(
-                    'registerPropertyStrategy',
+                $strategyRegistry->addMethodCall('registerPropertyStrategy',
                     [
                         $strategyKey,
                         $propertyName,
@@ -142,7 +137,6 @@ class MappingCompilePass implements CompilerPassInterface
 
         return $this;
     }
-
 
     /**
      * @param ContainerBuilder  $container
@@ -157,47 +151,18 @@ class MappingCompilePass implements CompilerPassInterface
 
         /** @var \DtoMapperBundle\Annotation\MappingMeta\EmbeddedInterface $embedded */
         foreach ($reader->getRelationsProperties() as $propertyName => $embedded) {
-            $strategy = new Definition(
-                Strategy\CollectionStrategy::class,
-                [
-                    new Reference(MapperInterface::class),
-                    $embedded->getTarget(),
-                    $embedded->isMulti(),
-                ]
-            );
+            $strategy = new Definition(Strategy\CollectionStrategy::class, [ new Reference(MapperInterface::class), $embedded->getTarget(), $embedded->isMulti(), ]);
 
             if ($reader->isSource()) {
                 $strategyKey = TypeResolver::getStrategyType($id, TypeDict::ALL_TYPE);
-                $strategyRegistry->addMethodCall(
-                    'registerPropertyStrategy',
-                    [
-                        $strategyKey,
-                        $propertyName,
-                        $strategy,
-                    ]
-                );
+                $strategyRegistry->addMethodCall('registerPropertyStrategy', [ $strategyKey, $propertyName, $strategy, ]);
             }
 
             if ($reader->isDestination()) {
                 $strategyKey = TypeResolver::getStrategyType(TypeDict::ARRAY_TYPE, $id);
-                $strategyRegistry->addMethodCall(
-                    'registerPropertyStrategy',
-                    [
-                        $strategyKey,
-                        $propertyName,
-                        $strategy,
-                    ]
-                );
-
+                $strategyRegistry->addMethodCall('registerPropertyStrategy', [ $strategyKey, $propertyName, $strategy, ]);
                 $strategyKey = TypeResolver::getStrategyType(TypeDict::ALL_TYPE, $id);
-                $strategyRegistry->addMethodCall(
-                    'registerPropertyStrategy',
-                    [
-                        $strategyKey,
-                        $propertyName,
-                        $strategy,
-                    ]
-                );
+                $strategyRegistry->addMethodCall('registerPropertyStrategy', [ $strategyKey, $propertyName, $strategy, ]);
             }
         }
 
@@ -219,23 +184,11 @@ class MappingCompilePass implements CompilerPassInterface
         foreach ($reader->getSourceNamingStrategies() as $namingStrategy) {
             $hasDefaultSource = true;
             $definition = $this->createNamingStrategy($namingStrategy);
-            $namingStrategyRegistry->addMethodCall(
-                'registerNamingStrategy',
-                [
-                    TypeResolver::getStrategyType($id, TypeDict::ALL_TYPE),
-                    $definition,
-                ]
-            );
+            $namingStrategyRegistry->addMethodCall('registerNamingStrategy', [ TypeResolver::getStrategyType($id, TypeDict::ALL_TYPE), $definition, ]);
         }
 
         if (false === $hasDefaultSource) {
-            $namingStrategyRegistry->addMethodCall(
-                'registerNamingStrategy',
-                [
-                    TypeResolver::getStrategyType($id, TypeDict::ARRAY_TYPE),
-                    new Definition(UnderscoreNamingStrategy::class),
-                ]
-            );
+            $namingStrategyRegistry->addMethodCall('registerNamingStrategy', [ TypeResolver::getStrategyType($id, TypeDict::ARRAY_TYPE),  new Definition(UnderscoreNamingStrategy::class), ]);
         }
 
         $hasDefaultDestination = false;
@@ -248,23 +201,11 @@ class MappingCompilePass implements CompilerPassInterface
                 $key = TypeResolver::getStrategyType($namingStrategy->getSource(), $id);
             }
 
-            $namingStrategyRegistry->addMethodCall(
-                'registerNamingStrategy',
-                [
-                    $key,
-                    $definition,
-                ]
-            );
+            $namingStrategyRegistry->addMethodCall('registerNamingStrategy', [ $key, $definition, ]);
         }
 
         if (false === $hasDefaultDestination) {
-            $namingStrategyRegistry->addMethodCall(
-                'registerNamingStrategy',
-                [
-                    TypeResolver::getStrategyType(TypeDict::ARRAY_TYPE, $id),
-                    new Definition(SnakeCaseNamingStrategy::class),
-                ]
-            );
+            $namingStrategyRegistry->addMethodCall('registerNamingStrategy', [ TypeResolver::getStrategyType(TypeDict::ARRAY_TYPE, $id),  new Definition(SnakeCaseNamingStrategy::class), ]);
         }
 
         return $this;
