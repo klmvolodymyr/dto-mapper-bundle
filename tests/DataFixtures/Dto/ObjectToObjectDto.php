@@ -2,31 +2,27 @@
 
 namespace Tests\DataFixtures\Dto;
 
+use DtoMapperBundle\Annotation\MappingMeta\Strategy;
 use DtoMapperBundle\Annotation\MappingMeta\DestinationClass;
-use Tests\DataFixtures\Model\Relations\MappedRelationsNodeInfo;
 
 /**
  * @DestinationClass
  */
 class ObjectToObjectDto
 {
-    /**
-     * @var MappedRelationsNodeInfo
-     */
-    private $nodeA;
+    public $nodeA;
 
     /**
-     * @var MappedRelationsNodeInfo
      * @Strategy\GetterStrategy(
-     *     source="Tests\DataFixtures\Model\Relations\RootSource",
+     *     source="\Tests\DataFixtures\Model\Relations\RootSource",
      *     method="getMe"
      * )
      */
-    private $nodeB;
+    public $nodeB;
 
     /**
      * @Strategy\GetterStrategy(
-     *     source="Tests\DataFixtures\Model\Relations\RootSource",
+     *     source="\Tests\DataFixtures\Model\Relations\RootSource",
      *     method="getMe"
      * )
      */

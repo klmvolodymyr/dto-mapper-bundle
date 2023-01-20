@@ -11,8 +11,7 @@ use DtoMapperBundle\Annotation\MappingMeta\EmbeddedClass;
 class ArrayToDto
 {
     /**
-     * @var DtoNode
-     * @EmbeddedClass(target="Tests\DataFixtures\Dto\ObjectToObject\DtoNode")
+     * @EmbeddedClass(target="\Tests\DataFixtures\Dto\ObjectToObject\DtoNode")
      */
     public $nodeA;
 }

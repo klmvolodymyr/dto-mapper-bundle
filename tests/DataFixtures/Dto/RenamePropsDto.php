@@ -3,6 +3,7 @@
 namespace Tests\DataFixtures\Dto;
 
 use DtoMapperBundle\Annotation\MappingMeta\DestinationClass;
+use DataMapper\NamingStrategy\MapNamingStrategy;
 
 /**
  * @DestinationClass(namingStrategies={

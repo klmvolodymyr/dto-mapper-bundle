@@ -4,6 +4,7 @@ namespace Tests\DataFixtures\Dto;
 
 use DtoMapperBundle\Annotation\MappingMeta\SourceClass;
 use Tests\DataFixtures\Model\Extractor\SnakeCaseInnerObject;
+use DataMapper\NamingStrategy\SnakeCaseNamingStrategy;
 
 /**
  * @SourceClass(namingStrategies={

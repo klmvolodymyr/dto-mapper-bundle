@@ -14,7 +14,7 @@ class ChainStrategy  extends AbstractStrategy
 {
     /**
      * @Required
-     * @var array<VKMapperBundle\Annotation\MappingMeta\Strategy\ChainStrategyInterface>
+     * @var array<\DtoMapperBundle\Annotation\MappingMeta\Strategy\ChainStrategyInterface>
      */
     public $list = [];
 

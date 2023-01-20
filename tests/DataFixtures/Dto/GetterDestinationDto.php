@@ -5,7 +5,7 @@ namespace Tests\DataFixtures\Dto;
 use DtoMapperBundle\Annotation\MappingMeta\DestinationClass;
 
 /**
- * @DestinationClass
+ * @DestinationClass()
  */
 class GetterDestinationDto
 {

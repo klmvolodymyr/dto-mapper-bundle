@@ -8,6 +8,7 @@ class ArrayToObjectNamingConversionTest extends AbstractMapperTest
 {
     /**
      * @param array $source
+     *
      * @dataProvider sourcesProvider
      */
     public function testKeysConversion(array $source): void
@@ -16,7 +17,6 @@ class ArrayToObjectNamingConversionTest extends AbstractMapperTest
         /** @var UnderscoreArrayToObjectDto $dto */
         $dto = $mapper->convert($source, new UnderscoreArrayToObjectDto());
         $this->assertPropsValues($dto, $source);
-
         $dto = $mapper->convert($source, UnderscoreArrayToObjectDto::class);
         $this->assertPropsValues($dto, $source);
     }
@@ -24,7 +24,7 @@ class ArrayToObjectNamingConversionTest extends AbstractMapperTest
     /**
      * @return array
      */
-    public function sourcesProvider(): array
+    public static function sourcesProvider(): array
     {
         return [
             [

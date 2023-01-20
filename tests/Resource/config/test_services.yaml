@@ -5,8 +5,8 @@ services:
         public: true
 
     Tests\DataFixtures\Service\ClosureStrategyService:
-    serviceId:
-      alias: Tests\DataFixtures\Service\ClosureStrategyService
+#      serviceId:
+#        alias: Tests\DataFixtures\Service\ClosureStrategyService
 
     Tests\DataFixtures\Model\Closure\ClosureProvider:
     Tests\DataFixtures\Model\Chain\ChainClosureProvider:

@@ -6,7 +6,7 @@ use DtoMapperBundle\Annotation\MappingMeta\DestinationClass;
 use DtoMapperBundle\Annotation\MappingMeta\EmbeddedClass;
 
 /**
- * @DestinationClass
+ * @DestinationClass()
  */
 class MappedRelationsNodeDto
 {
@@ -17,7 +17,7 @@ class MappedRelationsNodeDto
     /**
      * @var MappedRelationsNodeDto
      *
-     * @EmbeddedClass(target="Tests\DataFixtures\Dto\MappedRelationsNodeDto")
+     * @EmbeddedClass(target="\Tests\DataFixtures\Dto\MappedRelationsNodeDto")
      */
     public $nodeA;
 }

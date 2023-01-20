@@ -15,19 +15,12 @@ class Kernel extends BaseKernel
 
     public function getCacheDir(): string
     {
-        return \sprintf(
-            "%s/var/cache/%s",
-            $this->getProjectDir(),
-            $this->environment
-        );
+        return \sprintf("%s/var/cache/%s", $this->getProjectDir(), $this->environment);
     }
 
     public function getLogDir(): string
     {
-        return \sprintf(
-            "%s/var/log",
-            $this->getProjectDir()
-        );
+        return \sprintf("%s/var/log", $this->getProjectDir());
     }
 
     public function registerBundles(): array
@@ -40,10 +33,7 @@ class Kernel extends BaseKernel
 
     protected function configureContainer(ContainerBuilder $container, LoaderInterface $loader)
     {
-        $loader->load(\sprintf(
-            "%s/tests/Resource/config/test_services.yaml",
-                $this->getProjectDir()
-        ));
+        $loader->load(\sprintf("%s/tests/Resource/config/test_services.yaml", $this->getProjectDir()));
         $container->setParameter('kernel.secret', 'none');
     }
 }

@@ -3,6 +3,7 @@
 namespace Tests\DataFixtures\Dto\ObjectToObject;
 
 use DtoMapperBundle\Annotation\MappingMeta\SourceClass;
+use DtoMapperBundle\Annotation\MappingMeta\Strategy;
 
 /**
  * @SourceClass()

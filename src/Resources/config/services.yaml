@@ -11,8 +11,17 @@ services:
       autowire: false
       resource: '../../Annotation/MappingMeta/*'
 
+    DtoMapperBundle\Annotation\MappingMeta\NamingStrategy\:
+      autowire: false
+      resource: '../../Annotation/MappingMeta/NamingStrategy/*'
+
+    DtoMapperBundle\Annotation\MappingMeta\Strategy\:
+      autowire: false
+      resource: '../../Annotation/MappingMeta/Strategy/*'
+
     DtoMapperBundle\Annotation\AnnotationReader:
-      $reader: '@Doctrine\Common\Annotations\Reader'
+      arguments:
+        reader: '@Doctrine\Common\Annotations\Reader'
 
     DtoMapperBundle\Annotation\AnnotationReaderInterface:
       alias: DtoMapperBundle\Annotation\AnnotationReader
@@ -41,27 +50,32 @@ services:
     DataMapper\MapperInterface:
       alias: DataMapper\Mapper
 
-    DtoMapperBundle\NamingStrategy\SnakeCaseNamingStrategy:
-    DtoMapperBundle\NamingStrategy\UnderscoreNamingStrategy:
-    DtoMapperBundle\NamingStrategy\IdentityNamingStrategy:
+    DtoMapperBundle\Annotation\MappingMeta\NamingStrategy\SnakeCaseNamingStrategy:
+    DtoMapperBundle\Annotation\MappingMeta\NamingStrategy\UnderscoreNamingStrategy:
+    DtoMapperBundle\Annotation\MappingMeta\NamingStrategy\IdentityNamingStrategy:
+#    DtoMapperBundle\Annotation\MappingMeta\NamingStrategy\:
+#    DtoMapperBundle\Annotation\MappingMeta\Strategy\:
+#    DataMapper\NamingStrategy\SnakeCaseNamingStrategy:
+#    DataMapper\NamingStrategy\UnderscoreNamingStrategy:
+#    DataMapper\NamingStrategy\IdentityNamingStrategy:
 
-    DtoMapperBundle\MappingRegistry\MappingRegistry:
-    DtoMapperBundle\MappingRegistry\MappingRegistryInterface:
+    DataMapper\MappingRegistry\MappingRegistry:
+    DataMapper\MappingRegistry\MappingRegistryInterface:
       alias: DataMapper\MappingRegistry\MappingRegistry
 
-    DtoMapperBundle\MappingRegistry\HydratorRegistry:
-    DtoMapperBundle\MappingRegistry\HydratorRegistryInterface:
+    DataMapper\MappingRegistry\HydratorRegistry:
+    DataMapper\MappingRegistry\HydratorRegistryInterface:
       alias: DataMapper\MappingRegistry\HydratorRegistry
 
-    DtoMapperBundle\Hydrator\HydratedClassesFactory:
+    DataMapper\Hydrator\HydratedClassesFactory:
       arguments:
-        $targetDir: '%dto.mapper.cache_dir%'
+        targetDir: '%dto.mapper.cache_dir%'
 
     DtoMapperBundle\Hydrator\GeneratedHydratorCache:
       arguments:
-        $filesystem: '@Symfony\Component\Filesystem\Filesystem'
-        $hydratedClassesFactory: '@DataMapper\Hydrator\HydratedClassesFactory'
-        $cacheDir: '%dto.mapper.cache_dir%'
+        filesystem: '@Symfony\Component\Filesystem\Filesystem'
+        hydratedClassesFactory: '@DataMapper\Hydrator\HydratedClassesFactory'
+        cacheDir: '%dto.mapper.cache_dir%'
 
     DataMapper\Hydrator\ArrayCollectionHydrator:
     DataMapper\Hydrator\ArraySerializableHydrator:

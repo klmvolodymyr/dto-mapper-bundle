@@ -65,7 +65,7 @@ class RelationsMappingTest extends AbstractMapperTest
     /**
      * @return array
      */
-    public function relationsDataProvider(): array
+    public static function relationsDataProvider(): array
     {
         return [
             [

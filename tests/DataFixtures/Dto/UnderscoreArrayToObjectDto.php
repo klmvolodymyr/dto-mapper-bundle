@@ -5,6 +5,7 @@ namespace Tests\DataFixtures\Dto;
 use DtoMapperBundle\Annotation\MappingMeta\DestinationClass;
 use DtoMapperBundle\Annotation\MappingMeta\EmbeddedClass;
 use Tests\DataFixtures\Model\Extractor\UnderscoreInnerObject;
+use DataMapper\NamingStrategy\SnakeCaseNamingStrategy;
 
 /**
  * @DestinationClass(namingStrategies={

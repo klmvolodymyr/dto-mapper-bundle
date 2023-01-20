@@ -14,6 +14,9 @@ abstract class AbstractMapperTest extends KernelTestCase
 
     protected function getMapper(): MapperInterface
     {
-        return self::$container->get(MapperInterface::class);
+        /** @var MapperInterface $mapper */
+        $mapper = self::$kernel->getContainer()->get(MapperInterface::class);
+
+        return $mapper;
     }
 }
