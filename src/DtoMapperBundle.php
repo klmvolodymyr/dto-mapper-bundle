@@ -15,7 +15,7 @@ class DtoMapperBundle  extends Bundle
     public function build(ContainerBuilder $container): void
     {
         parent::build($container);
-         $container->registerExtension(new MapperBundleExtension());
-         $container->addCompilerPass(new MappingCompilePass());
+        $container->registerExtension(new MapperBundleExtension());
+        $container->addCompilerPass(new MappingCompilePass());
     }
 }
